@@ -14,12 +14,7 @@
 			console.log("Time: ",message.createdAt);
 		});
 		
-		socket.emit('createMessage',{
-			
-			from:'Gerard',
-			text:'Hey Server Buddy'			
-			
-		});
+
 		
 		
 		

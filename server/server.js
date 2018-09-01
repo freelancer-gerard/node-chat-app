@@ -16,19 +16,18 @@ io.on('connection',(socket)=>{
 	
 	console.log('New User Connected to Our App');
 	
-	socket.emit('newMessage',{
-		
-		from:'Server',
-		text:'Hey Gerard',
-		createdAt:1233412
-		
-		
-	});	
+
 	
 	socket.on('createMessage',(message)=>{
-		
-			console.log("User: ",message.from);
-			console.log("Message: ",message.text);		
+
+			io.emit('newMessage',{
+				
+				from:message.from,
+				text:message.text,
+				createdAt:new Date().getTime()
+	
+			});
+			
 		
 	});
 	
