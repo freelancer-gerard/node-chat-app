@@ -33,7 +33,7 @@ io.on('connection',(socket)=>{
 			 
 			 
 			 
-			 callback('This is from the server');
+			 callback();
 			
 		
 	});
