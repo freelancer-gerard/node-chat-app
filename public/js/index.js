@@ -9,12 +9,47 @@
 		})
 		
 		socket.on('newMessage',function(message){
-			console.log("User: ",message.from);
-			console.log("Message: ",message.text);
-			console.log("Time: ",message.createdAt);
+
+			var li=$('<li></li>');
+			li.text(`${message.from} : ${message.text}`);
+			$("#messages").append(li);
+		
 		});
 		
 
+		
+		
+		$("#message-form").on('submit',function(e){
+			e.preventDefault();
+			socket.emit("createMessage",{
+				
+				from:'User',
+				text:$("[name=message]").val(),
+				createdAt:12112312
+				
+			},function(){
+				
+				
+				
+			})
+			
+			
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
